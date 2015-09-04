@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Human: {{ entry.name }}</title>
+    </head>
+    <body>
+        <h1>Hi</h1>
+        {% if entry.image %}
+            <img style="float:right" src="{{ asset_url(entry.image) }}" alt="Picture of {{ entry.name }}"/>
+        {% endif %}
+        <p>
+            My name is {{ entry.name }} and I like {{ entry.likes | join(', ') }}.</p>
+
+        <p>{{ entry.description }}</p>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Dog: {{ entry.name }}</title>
+    </head>
+    <body>
+        <h1>{{ entry.name }}</h1>
+        {% if entry.image %}
+            <img style="float:right" src="{{ asset_url(entry.image) }}" alt="Picture of {{ entry.name }}"/>
+        {% endif %}
+        <p>{{ entry.description }}</p>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Cat: {{ entry.name }}</title>
+    </head>
+    <body>
+        <h1>Hi</h1>
+        {% if entry.image %}
+            <img style="float:right" src="{{ asset_url(entry.image) }}" alt="Picture of {{ entry.name }}"/>
+        {% endif %}
+        <p>
+            My name is {{ entry.name }} and I like {{ entry.likes | join(', ') }}.
+
+            {% if entry.lives > 4 %}
+                I'm pretty adventurous, since I still have {{ entry.lives }} lives.
+            {% endif %}
+
+            {% if entry.bestFriend %}
+                {% set bestFriend = get_entry(entry.bestFriend) %}
+                My best friend is <a href="{{bestFriend.sys.id}}.html">{{ bestFriend.name }}</a>
+            {% endif %}
+        </p>
+    </body>
+</html>
